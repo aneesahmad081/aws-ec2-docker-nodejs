@@ -243,6 +243,15 @@ View Students
 db.students.find().pretty()
 ```
 
+# 👨‍💻 Author
+
+**Anees Ahmad**
+
+Cloud & AWS Enthusiast
+
+GitHub:
+https://github.com/aneesahmad081
+
 ---
 
 # 📷 Project Screenshots
@@ -340,11 +349,4 @@ After completing this project, I learned:
 </tr>
 </table>
 
-# 👨‍💻 Author
 
-**Anees Ahmad**
-
-Cloud & AWS Enthusiast
-
-GitHub:
-https://github.com/aneesahmad081
