@@ -68,42 +68,45 @@ aws-ec2-docker-nodejs/
 ├── package.json
 ├── package-lock.json
 ├── models/
-│     └── Student.js
+│   └── Student.js
 ├── README.md
 └── screenshots/
+    ├── ec2-running.png
+    ├── security-group.png
+    ├── docker-containers.png
+    ├── browser-output.png
+    └── mongodb-data.png
 ```
 
 ---
 
 # 🚀 Deployment Steps
 
-## 1️⃣ Clone Repository
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/aneesahmad081/aws-ec2-docker-nodejs.git
 ```
 
-## 2️⃣ Go to Project Folder
+## 2. Go to Project Folder
 
 ```bash
 cd aws-ec2-docker-nodejs
 ```
 
-## 3️⃣ Build and Start Containers
+## 3. Build and Start Containers
 
 ```bash
 docker compose up --build -d
 ```
 
-## 4️⃣ Verify Running Containers
+## 4. Verify Running Containers
 
 ```bash
 docker ps
 ```
 
-## 5️⃣ Access Application
-
-Open your browser:
+## 5. Access Application
 
 ```
 http://YOUR_PUBLIC_IP:3000
@@ -121,7 +124,7 @@ http://51.20.75.237:3000
 
 ## Home
 
-```
+```http
 GET /
 ```
 
@@ -133,11 +136,9 @@ Response
 }
 ```
 
----
-
 ## Create Student
 
-```
+```http
 POST /student
 ```
 
@@ -145,17 +146,15 @@ Request Body
 
 ```json
 {
-    "name":"Anees Ahmad",
-    "age":22,
-    "course":"AWS Cloud"
+  "name": "Anees Ahmad",
+  "age": 22,
+  "course": "AWS Cloud"
 }
 ```
 
----
-
 ## Get All Students
 
-```
+```http
 GET /students
 ```
 
@@ -163,43 +162,43 @@ GET /students
 
 # 🐳 Useful Docker Commands
 
-## Build & Run
+Build & Run
 
 ```bash
 docker compose up --build -d
 ```
 
-## Stop Containers
+Stop Containers
 
 ```bash
 docker compose down
 ```
 
-## Restart Containers
+Restart Containers
 
 ```bash
 docker compose restart
 ```
 
-## List Running Containers
+Running Containers
 
 ```bash
 docker ps
 ```
 
-## View Container Logs
+View Logs
 
 ```bash
 docker compose logs
 ```
 
-## Enter MongoDB Container
+Enter MongoDB Container
 
 ```bash
 docker exec -it mongodb bash
 ```
 
-## Open Mongo Shell
+Open Mongo Shell
 
 ```bash
 mongosh
@@ -231,9 +230,9 @@ Insert Student
 
 ```javascript
 db.students.insertOne({
-    name:"Anees Ahmad",
-    age:22,
-    course:"AWS Cloud"
+  name: "Anees Ahmad",
+  age: 22,
+  course: "AWS Cloud"
 })
 ```
 
@@ -243,60 +242,6 @@ View Students
 db.students.find().pretty()
 ```
 
-# 👨‍💻 Author
-
-**Anees Ahmad**
-
-Cloud & AWS Enthusiast
-
-GitHub:
-https://github.com/aneesahmad081
-
----
-
-# 📷 Project Screenshots
-
-The following screenshots will be added:
-
-- ✅ AWS EC2 Running Instance
-- ✅ Security Group Configuration
-- ✅ Docker Containers
-- ✅ Browser Output
-- ✅ MongoDB Data
-
----
-
-# 📚 Learning Outcomes
-
-After completing this project, I learned:
-
-- AWS EC2 Instance Management
-- SSH into Linux Server
-- Linux Commands
-- Docker Installation
-- Docker Compose
-- Docker Images
-- Docker Containers
-- Docker Networking
-- Docker Volumes
-- MongoDB Container
-- Git & GitHub
-- Cloud Deployment
-- Node.js Deployment
-- MongoDB Integration
-
----
-
-# 🎯 Future Improvements
-
-- Nginx Reverse Proxy
-- HTTPS using SSL
-- Docker Secrets
-- GitHub Actions CI/CD
-- AWS Elastic IP
-- AWS Load Balancer
-- Domain Name Integration
-
 ---
 
 # 📷 Project Screenshots
@@ -305,17 +250,17 @@ After completing this project, I learned:
 <tr>
 <td align="center">
 
-### AWS EC2
+<b>AWS EC2 Running</b><br><br>
 
-<img src="screenshots/ec2-running.png" width="450"/>
+<img src="screenshots/ec2-running.png" width="450">
 
 </td>
 
 <td align="center">
 
-### Security Group
+<b>Security Group</b><br><br>
 
-<img src="screenshots/security-group.png" width="450"/>
+<img src="screenshots/security-group.png" width="450">
 
 </td>
 </tr>
@@ -323,17 +268,17 @@ After completing this project, I learned:
 <tr>
 <td align="center">
 
-### Docker Containers
+<b>Docker Containers</b><br><br>
 
-<img src="screenshots/docker-containers.png" width="450"/>
+<img src="screenshots/docker-containers.png" width="450">
 
 </td>
 
 <td align="center">
 
-### Browser Output
+<b>Application Running</b><br><br>
 
-<img src="screenshots/browser-output.png" width="450"/>
+<img src="screenshots/browser-output.png" width="450">
 
 </td>
 </tr>
@@ -341,12 +286,51 @@ After completing this project, I learned:
 <tr>
 <td colspan="2" align="center">
 
-### MongoDB Data
+<b>MongoDB Data</b><br><br>
 
-<img src="screenshots/mongodb-data.png" width="600"/>
+<img src="screenshots/mongodb-data.png" width="700">
 
 </td>
 </tr>
 </table>
 
+---
 
+# 📚 Learning Outcomes
+
+After completing this project, I learned:
+
+- AWS EC2 Instance Management
+- Linux Commands
+- SSH into EC2
+- Docker Installation
+- Docker Compose
+- Docker Images
+- Docker Containers
+- Docker Networking
+- Docker Volumes
+- MongoDB Container
+- Git & GitHub
+- Node.js Deployment
+- Cloud Deployment
+
+---
+
+# 🎯 Future Improvements
+
+- Nginx Reverse Proxy
+- HTTPS (SSL/TLS)
+- GitHub Actions CI/CD
+- AWS Elastic IP
+- AWS Load Balancer
+- Domain Name Integration
+
+---
+
+# 👨‍💻 Author
+
+**Anees Ahmad**
+
+Cloud & AWS Enthusiast
+
+GitHub: https://github.com/aneesahmad081
