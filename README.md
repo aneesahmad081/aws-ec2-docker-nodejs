@@ -1,82 +1,125 @@
-# 🚀 Docker Compose + Node.js + MongoDB API
+# 🚀 AWS EC2 Docker Node.js MongoDB Deployment
 
-A beginner-friendly project demonstrating how to build and run a multi-container application using Docker Compose.
+A real-world cloud deployment project demonstrating how to deploy a Node.js application with MongoDB on an AWS EC2 Ubuntu server using Docker and Docker Compose.
 
-## 📌 Project Overview
+---
 
-This project uses:
+# 📌 Project Overview
+
+This project demonstrates how to deploy a multi-container application on **AWS EC2** using **Docker Compose**.
+
+The application consists of:
 
 - Node.js
 - Express.js
 - MongoDB
-- Mongoose
 - Docker
 - Docker Compose
+- AWS EC2 (Ubuntu 24.04)
 
-The application exposes REST APIs to create and retrieve student data stored in MongoDB.
+The Node.js application runs inside a Docker container and connects to a MongoDB container using Docker Compose networking.
 
 ---
 
-## 🛠️ Tech Stack
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Docker
-- Docker Compose
-
----
-
-## 📂 Project Structure
+# ☁️ AWS Architecture
 
 ```
-docker-compose-node-mongodb/
+                 Internet
+                     │
+                     ▼
+          AWS EC2 (Ubuntu 24.04)
+                     │
+              Docker Engine
+                     │
+             Docker Compose
+             ┌────────┴────────┐
+             │                 │
+             ▼                 ▼
+       Node.js App        MongoDB
+      (Port 3000)      (Port 27017)
+```
+
+---
+
+# 🛠 Technologies Used
+
+- AWS EC2
+- Ubuntu 24.04
+- Docker
+- Docker Compose
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Git
+- GitHub
+- Linux
+
+---
+
+# 📂 Project Structure
+
+```
+aws-ec2-docker-nodejs/
 │
-├── models/
-│   └── Student.js
-├── app.js
 ├── Dockerfile
 ├── docker-compose.yml
+├── app.js
 ├── package.json
 ├── package-lock.json
-├── .gitignore
-└── README.md
+├── models/
+│     └── Student.js
+├── README.md
+└── screenshots/
 ```
 
 ---
 
-## 🚀 Run the Project
+# 🚀 Deployment Steps
 
-### Clone Repository
-
-```bash
-git clone https://github.com/aneesahmad081/docker-compose-node-mongodb.git
-```
-
-### Go to Project
+## 1️⃣ Clone Repository
 
 ```bash
-cd docker-compose-node-mongodb
+git clone https://github.com/aneesahmad081/aws-ec2-docker-nodejs.git
 ```
 
-### Run with Docker Compose
+## 2️⃣ Go to Project Folder
 
 ```bash
-docker compose up --build
+cd aws-ec2-docker-nodejs
 ```
 
-Application:
+## 3️⃣ Build and Start Containers
+
+```bash
+docker compose up --build -d
+```
+
+## 4️⃣ Verify Running Containers
+
+```bash
+docker ps
+```
+
+## 5️⃣ Access Application
+
+Open your browser:
 
 ```
-http://localhost:3000
+http://YOUR_PUBLIC_IP:3000
+```
+
+Example:
+
+```
+http://51.20.75.237:3000
 ```
 
 ---
 
-## 📌 API Endpoints
+# 📌 API Endpoints
 
-### Home
+## Home
 
 ```
 GET /
@@ -92,25 +135,25 @@ Response
 
 ---
 
-### Create Student
+## Create Student
 
 ```
 POST /student
 ```
 
-Body
+Request Body
 
 ```json
 {
-  "name": "Anees Ahmad",
-  "age": 23,
-  "city": "Dir"
+    "name":"Anees Ahmad",
+    "age":22,
+    "course":"AWS Cloud"
 }
 ```
 
 ---
 
-### Get All Students
+## Get All Students
 
 ```
 GET /students
@@ -118,47 +161,140 @@ GET /students
 
 ---
 
-## 🐳 Docker Commands
+# 🐳 Useful Docker Commands
 
-Build & Run
+## Build & Run
 
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
-Stop
+## Stop Containers
 
 ```bash
 docker compose down
 ```
 
-List Containers
+## Restart Containers
+
+```bash
+docker compose restart
+```
+
+## List Running Containers
 
 ```bash
 docker ps
 ```
 
+## View Container Logs
+
+```bash
+docker compose logs
+```
+
+## Enter MongoDB Container
+
+```bash
+docker exec -it mongodb bash
+```
+
+## Open Mongo Shell
+
+```bash
+mongosh
+```
+
 ---
 
-## 📚 What I Learned
+# 🍃 MongoDB Commands
 
+Show Databases
+
+```javascript
+show dbs
+```
+
+Use Database
+
+```javascript
+use dockerdb
+```
+
+Show Collections
+
+```javascript
+show collections
+```
+
+Insert Student
+
+```javascript
+db.students.insertOne({
+    name:"Anees Ahmad",
+    age:22,
+    course:"AWS Cloud"
+})
+```
+
+View Students
+
+```javascript
+db.students.find().pretty()
+```
+
+---
+
+# 📷 Project Screenshots
+
+The following screenshots will be added:
+
+- ✅ AWS EC2 Running Instance
+- ✅ Security Group Configuration
+- ✅ Docker Containers
+- ✅ Browser Output
+- ✅ MongoDB Data
+
+---
+
+# 📚 Learning Outcomes
+
+After completing this project, I learned:
+
+- AWS EC2 Instance Management
+- SSH into Linux Server
+- Linux Commands
+- Docker Installation
+- Docker Compose
 - Docker Images
 - Docker Containers
-- Dockerfile
-- Docker Compose
-- MongoDB Container
 - Docker Networking
 - Docker Volumes
-- Express.js
-- Mongoose
-- REST APIs
-- Postman API Testing
+- MongoDB Container
+- Git & GitHub
+- Cloud Deployment
+- Node.js Deployment
+- MongoDB Integration
 
 ---
 
-## 👨‍💻 Author
+# 🎯 Future Improvements
+
+- Nginx Reverse Proxy
+- HTTPS using SSL
+- Docker Secrets
+- GitHub Actions CI/CD
+- AWS Elastic IP
+- AWS Load Balancer
+- Domain Name Integration
+
+---
+
+# 👨‍💻 Author
 
 **Anees Ahmad**
+
+Cloud & AWS Enthusiast
 
 GitHub:
 https://github.com/aneesahmad081
