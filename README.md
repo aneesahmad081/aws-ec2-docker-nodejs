@@ -290,6 +290,56 @@ After completing this project, I learned:
 
 ---
 
+# 📷 Project Screenshots
+
+<table>
+<tr>
+<td align="center">
+
+### AWS EC2
+
+<img src="screenshots/ec2-running.png" width="450"/>
+
+</td>
+
+<td align="center">
+
+### Security Group
+
+<img src="screenshots/security-group.png" width="450"/>
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### Docker Containers
+
+<img src="screenshots/docker-containers.png" width="450"/>
+
+</td>
+
+<td align="center">
+
+### Browser Output
+
+<img src="screenshots/browser-output.png" width="450"/>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+
+### MongoDB Data
+
+<img src="screenshots/mongodb-data.png" width="600"/>
+
+</td>
+</tr>
+</table>
+
 # 👨‍💻 Author
 
 **Anees Ahmad**
